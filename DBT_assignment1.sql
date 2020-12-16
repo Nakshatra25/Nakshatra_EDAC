@@ -1,0 +1,34 @@
+use assignment1;
+create table Member(Member_ID int,Member_Name varchar(30),Member_adress varchar(50),Acc_Open_Date date,Membership_Type varchar(20),Penalty_Amount int(7));
+create table Books(Book_No int(6),Book_Name varchar(30),Author_Name varchar(30),cost int(7),Category char(10));
+create table Issue(Lib_Issue_Id int(10),Book_No int(6),Member_Id int(5),Issue_Date date,Return_Date date);
+select *from Member;
+select *from Books;
+select *from Issue;
+alter table Member drop column Penalty_Amount;
+desc Member;
+insert into Member values(1,"Richa Sharma","pune","2005-12-10","LifeTime");
+insert into Member values(2,"Garima Sen","Pune","2020-12-04","Annual");
+insert into Member values(3,"Naman Patil","BSL","2020-12-5","semi annual");
+insert into Member values(4,"Shivam Rathore","Mumbai","2020-12-08","quarterly");
+insert into Member values(5,"Tejas Talele","Ambernath","2020-12-09","weekly");
+desc Member;
+select * from Member;
+insert into books values(101,"Let us C","Dennis Ritchie",450,"System");
+insert into books values(102,"Oracle- Complete Ref","Loni",550,"Database");
+insert into books values(103,"Mastering SQL","Loni",250,"Database");
+insert into books values(104,"PL SQL-Ref","ScottUrman",750,"Database");
+desc Books;
+select * from Books;
+update Books set cost=300 where Book_No=103;
+drop table Issue;
+desc Issue;
+insert into Issue(LIb_Issue_Id,Book_No,Member_Id,Issue_Date)values(7001,101,1,"2006-12-10");
+insert into Issue(LIb_Issue_Id,Book_No,Member_Id,Issue_Date)values(7002,101,2,"2006-12-25");
+insert into Issue(LIb_Issue_Id,Book_No,Member_Id,Issue_Date)values(7003,101,1,"2006-12-15");
+insert into Issue(LIb_Issue_Id,Book_No,Member_Id,Issue_Date)values(7004,101,1,"2006-12-04");
+insert into Issue(LIb_Issue_Id,Book_No,Member_Id,Issue_Date)values(7005,101,2,"2006-12-15");
+insert into Issue(LIb_Issue_Id,Book_No,Member_Id,Issue_Date)values(7006,101,3,"2006-12-18");
+select * from Issue;
+
+
